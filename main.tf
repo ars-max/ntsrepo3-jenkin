@@ -1,27 +1,10 @@
 provider "aws" {
-  region = "us-east-1"
- 
-
-
-}
-variable "private_key_path" {
-
-  default = "nts10key1.pem"
-
+  region = "ap-south-1"
 }
 
-
-resource "aws_instance" "web-server" {
-
-  ami           = "ami-04a81a99f5ec58529"
-
-  instance_type = "t2.micro"
-
-  key_name      = "nts10key"
-
-
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
   tags = {
-
-    "Name": "ec2-nts"
-
+    Name = "Tarraform_demo"
   }
+}
